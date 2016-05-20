@@ -74,25 +74,25 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 			{
 				title: "Olle Bengtsson",
 				description: "Kan lite av allt, Ger aldrig upp",
-				path: "img/1.jpg"
+				path: "img/about/1.jpg"
 			});
 		aboutdb.create(
 			{
 				title: "Andreas Lövqvist",
 				description: "Javascript mästaren",
-				path: "img/2.jpg"
+				path: "img/about/2.jpg"
 			});
 		aboutdb.create(
 			{
 				title: "Alexander Wigström",
 				description: "Design nörd",
-				path: "img/3.jpg"
+				path: "img/about/3.jpg"
 			});
 		aboutdb.create(
 			{
 				title: "Marcus Wendel",
 				description: "Kan lite av allt, Snabblärd",
-				path: "img/4.jpg"
+				path: "img/about/4.jpg"
 			});
 	}
 
@@ -103,7 +103,7 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 			    description: "Trevlig kille med riktig kullmage",
 			    worktime: 8,
 			    age: 20,
-			    path: "img/m1.jpg",
+			    path: "img/workers/1.jpg",
 			    email: "kalle.kulla@dyhrrumson.se",
 			    phone: "071-234 56 78"
 	  		});
@@ -112,7 +112,7 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 			    description: "Trevlig tjej med riktig kullmage",
 			    worktime: 10,
 			    age: 35,
-			    path: "img/m2.jpg",
+			    path: "img/workers/2.jpg",
 			    email: "lisa.bulla@dyhrrumson.se",
 			    phone: "071-234 56 78"
 	  		});
@@ -121,7 +121,7 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 			    description: "Trevlig fillur med riktig kullmage",
 			    worktime: 2,
 			    age: 30,
-			    path: "img/m3.jpg",
+			    path: "img/workers/3.jpg",
 			    email: "hans.sulla@dyhrrumson.se",
 			    phone: "071-234 56 78"
 	  		});
@@ -130,7 +130,7 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 			    description: "Trevlig snubbe med riktig kullmage",
 			    worktime: 2,
 			    age: 25,
-			    path: "img/m4.jpg",
+			    path: "img/workers/4.jpg",
 			    email: "pelle.hulla@dyhrrumson.se",
 			    phone: "071-234 56 78"
 	  	});
