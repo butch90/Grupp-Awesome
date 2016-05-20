@@ -73,26 +73,26 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 		aboutdb.create(
 			{
 				title: "Olle Bengtsson",
-				description: "Glad påg på 27 somrar",
-				path: "img/gubbe.jpg"
+				description: "Kan lite av allt, Ger aldrig upp",
+				path: "img/1.jpg"
 			});
 		aboutdb.create(
 			{
 				title: "Andreas Lövqvist",
-				description: "Galen på javascript, och värderingar såklart",
-				path: "img/maklare2.jpg"
+				description: "Javascript mästaren",
+				path: "img/2.jpg"
 			});
 		aboutdb.create(
 			{
-				title: "Andreas Wigström",
-				description: "Bootstrap maestro",
-				path: "img/maklare3.jpg"
+				title: "Alexander Wigström",
+				description: "Design nörd",
+				path: "img/3.jpg"
 			});
 		aboutdb.create(
 			{
 				title: "Marcus Wendel",
-				description: "Inget han kan göra på två hjul",
-				path: "img/gubbe.jpg"
+				description: "Kan lite av allt, Snabblärd",
+				path: "img/4.jpg"
 			});
 	}
 
@@ -102,8 +102,8 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 			    name: "Kalle Kulla",
 			    description: "Trevlig kille med riktig kullmage",
 			    worktime: 8,
-			    age: 43,
-			    path: "img/gubbe.jpg",
+			    age: 20,
+			    path: "img/m1.jpg",
 			    email: "kalle.kulla@dyhrrumson.se",
 			    phone: "071-234 56 78"
 	  		});
@@ -111,8 +111,8 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 			    name: "Lisa Bulla",
 			    description: "Trevlig tjej med riktig kullmage",
 			    worktime: 10,
-			    age: 33,
-			    path: "img/maklare2.jpg",
+			    age: 35,
+			    path: "img/m2.jpg",
 			    email: "lisa.bulla@dyhrrumson.se",
 			    phone: "071-234 56 78"
 	  		});
@@ -120,10 +120,19 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 			    name: "Hans Sulla",
 			    description: "Trevlig fillur med riktig kullmage",
 			    worktime: 2,
-			    age: 19,
-			    path: "img/maklare3.jpg",
+			    age: 30,
+			    path: "img/m3.jpg",
 			    email: "hans.sulla@dyhrrumson.se",
 			    phone: "071-234 56 78"
 	  		});
+	  	workers.create({
+			    name: "Pelle Hulla",
+			    description: "Trevlig snubbe med riktig kullmage",
+			    worktime: 2,
+			    age: 25,
+			    path: "img/m4.jpg",
+			    email: "pelle.hulla@dyhrrumson.se",
+			    phone: "071-234 56 78"
+	  	});
 	}
 }]);
