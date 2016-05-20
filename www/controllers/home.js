@@ -14,7 +14,7 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
     // Dummy data
     property.get({},function(data){if(data.length === 0){addProperties(data);}});
     homedb.get({},function(data){if(data.length === 0){addHome(data);}});
-    aboutdb.get({},function(data){if(data.length === 0){/*addAbout(data)*/}});
+    aboutdb.get({},function(data){if(data.length === 0){addAbout(data)}});
     workers.get({},function(data){if(data.length === 0){addWorkers(data)}});
 
 	function addProperties(data){
@@ -70,7 +70,30 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 	}
 
 	function addAbout(data){
-		
+		aboutdb.create(
+			{
+				title: "Olle Bengtsson",
+				description: "Glad påg på 27 somrar",
+				path: "img/gubbe.jpg"
+			});
+		aboutdb.create(
+			{
+				title: "Andreas Lövqvist",
+				description: "Galen på javascript, och värderingar såklart",
+				path: "img/maklare2.jpg"
+			});
+		aboutdb.create(
+			{
+				title: "Andreas Wigström",
+				description: "Bootstrap maestro",
+				path: "img/maklare3.jpg"
+			});
+		aboutdb.create(
+			{
+				title: "Marcus Wendel",
+				description: "Inget han kan göra på två hjul",
+				path: "img/gubbe.jpg"
+			});
 	}
 
 	function addWorkers(data){
