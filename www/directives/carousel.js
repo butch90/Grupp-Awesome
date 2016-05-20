@@ -23,7 +23,7 @@ app.directive('carousel', [function() {
           
         }
       })
-      $scope.myInterval = 5000;
+      $scope.myInterval = 10000;
       $scope.noWrapSlides = false;
       $scope.active = 0;
       var slides = $scope.slides = []
@@ -32,7 +32,7 @@ app.directive('carousel', [function() {
       $scope.addSlide = function() {
           slides.push({
             imageStyle: {
-              'background-image': 'url(/img/backgrounds/background' + currIndex + '.jpg)',
+              'background-image': 'url(/img/backgrounds/background' + (currIndex+1) + '.jpg)',
               height: getSlideHeight()
             },
             text: ['Nice image','Awesome photograph','That is so cool','I love that'][slides.length % 4],
@@ -67,7 +67,7 @@ app.directive('carousel', [function() {
 
 
 
-        for (var i = 1; i < 8; ++i) {
+        for (var i = 0; i < 7; ++i) {
           $scope.addSlide();
 
         }
