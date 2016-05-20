@@ -67,7 +67,7 @@ app.directive('carousel', [function() {
 
 
 
-        for (var i = 1; i < 9; ++i) {
+        for (var i = 1; i < 8; ++i) {
           $scope.addSlide();
 
         }
