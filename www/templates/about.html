@@ -1,15 +1,24 @@
 <div class="container">
     <div ng-repeat="aboutData in aboutDatas">
         <div class="aboutBox">
-            <div class="row">
-                <div class="col-xs-12 col-sm-4 col-sm-offset-2">
-                    <img class="img-responsive" ng-src="{{aboutData.path}}">
-                </div>
-                <div class="col-xs-12 col-sm-4">
-                    <h2>{{aboutData.title}}</h2>
-                    <hr class="hrWidth">
-                    <div class="clearfix"></div>
-                    <p><i>{{aboutData.description}}<i></p>
+                <div class="row">
+                    <div class="col-xs-8 col-xs-offset-2">
+                        <div class="well">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <img class="img-responsive" ng-src="{{aboutData.path}}">
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6">
+                                        <h2>{{aboutData.title}}</h2>
+                                        <hr class="hrWidth">
+                                        <div class="clearfix"></div>
+                                        <p><i>{{aboutData.description}}<i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
