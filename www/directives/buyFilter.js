@@ -25,9 +25,9 @@ app.directive('buyFilter', [function(){
       // We use this data in the the query for filtering and URL
       $scope.filterOption = {
         priceMin: 1,
-        priceMax: 100000000 ,
+        priceMax: 1e8 ,
         areaMin: 1,
-        areaMax: 10000,
+        areaMax: 1e4,
 
         // Property type House/Apartment
         // /.*/ takes all values
@@ -69,8 +69,8 @@ app.directive('buyFilter', [function(){
       // This is just stored data instead of keeping it in the .html
       // It's looped into a <select> with ng-options in .html
       $scope.filterOptions = {
-        priceMin: [0,1000000,2500000,5000000,7500000,10000000],
-        priceMax: [2500000,5000000,7500000,10000000,15000000,50000000],
+        priceMin: [0,1e6,2e6+5e5,5e6,7e6+5e5,1e7],
+        priceMax: [2e6+5e5,5e6,7e6+5e5,1e7,1e7+5e6,5e7],
         areaMin: [0,25,50,75,100,125,150],
         areaMax: [25,50,75,100,125,150,200,300],
         itemsPerPage: [5,10,25,50],

@@ -12,17 +12,17 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
     loadhome();
 
     // Dummy data
-    property.get({},function(data){if(!data.length){addProperties(data);}});
-    homedb.get({},function(data){if(!data.length){addHome(data);}});
-    aboutdb.get({},function(data){if(!data.length){addAbout(data)}});
-    workers.get({},function(data){if(!data.length){addWorkers(data)}});
+    property.get({},function(data){if(!data.length){addProperties();}});
+    homedb.get({},function(data){if(!data.length){addHome();}});
+    aboutdb.get({},function(data){if(!data.length){addAbout()}});
+    workers.get({},function(data){if(!data.length){addWorkers()}});
 
-	function addProperties(data){
+	function addProperties(){
 
 		function randomData() {
 
 			function randomNum(numLow, numHigh, startValue) {
-				return ((!numLow) ? Math.floor((Math.random() * (numHigh + 1) + numLow)):Math.floor((Math.random() * numHigh) + numLow) + ((!startValue) ? 0:startValue));
+				return ((!numLow) ? Math.floor((Math.random() * (numHigh + 1) + numLow)) : Math.floor((Math.random() * numHigh) + numLow) + ((!startValue) ? 0:startValue));
 			}
 
 			function randomType() {
@@ -34,7 +34,7 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 			return {
 				adress: adresses[randomNum(0, 10)],
 				zipcode: randomNum(1, 10000, 10000),
-				price: randomNum(1, 20000000, 700000),
+				price: randomNum(1, 2e7, 7e5),
 				rooms: randomNum(1,10),
 				livingarea: randomNum(1, 100, 30),
 				propertyType: randomType(),
@@ -54,11 +54,11 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 		property.create(homes);
 	}
 
-	function addHome(data){
+	function addHome(){
 		homedb.create({title: "Välkommen till oss", text: "Lorem ipsum dolor sit amet, arcu nonummy vulputate. Vehicula integer, tellus massa vitae laoreet tellus."});
 	}
 
-	function addAbout(data){
+	function addAbout(){
 		aboutdb.create([
 			{
 				title: "Olle Bengtsson",
@@ -82,7 +82,7 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 			}]);
 	}
 
-	function addWorkers(data){
+	function addWorkers(){
 		workers.create([
 			{
 			    name: "Kalle Kulla",
