@@ -121,12 +121,12 @@ app.directive('buyFilter', [function(){
 
 
             // Checks if our id in URL is an existing id
-            if(data.id){
+            if($route.current.params.id){
               if($scope.initValues.find(findProp)){
                 $scope.openModal($scope.initValues.find(findProp));
               }
               else{
-                data.id = null;
+                $route.current.params.id = null;
               }
             }
 
