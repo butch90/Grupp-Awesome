@@ -22,7 +22,7 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 		function randomData() {
 
 			function randomNum(numLow, numHigh, startValue) {
-				return ((!numLow) ? Math.floor((Math.random() * (numHigh + 1) + numLow)) : Math.floor((Math.random() * numHigh) + numLow) + ((!startValue) ? 0:startValue));
+				return ((!numLow) ? ~~(Math.random() * (numHigh + 1) + numLow) : ~~(Math.random() * numHigh) + numLow) + ((!startValue) ? 0:startValue);
 			}
 
 			function randomType() {

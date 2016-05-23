@@ -14,20 +14,14 @@ app.directive('carousel', [function() {
       // handler for changing background opacity
       
       $scope.$watch('route.current.$$route.originalPath' , function() {
+        ($scope.route.current.$$route.originalPath == '/') ? $('carousel').css('opacity', 1) : $('carousel').css('opacity', 0.7);
+      });
 
-        if($scope.route.current.$$route.originalPath == '/') {
-          $('carousel').css('opacity', 1);
-        }
-        else {
-          $('carousel').css('opacity', 0.7);
-          
-        }
-      })
-      $scope.myInterval = 10000;
+      $scope.myInterval = 20000;
       $scope.noWrapSlides = false;
       $scope.active = 0;
-      var slides = $scope.slides = []
-      var currIndex = 0;
+      var slides = $scope.slides = [],
+          currIndex = 0;
 
       $scope.addSlide = function() {
           slides.push({
