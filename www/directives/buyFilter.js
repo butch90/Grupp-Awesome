@@ -68,6 +68,7 @@ app.directive('buyFilter', [function(){
       // Select options for angular
       // This is just stored data instead of keeping it in the .html
       // It's looped into a <select> with ng-options in .html
+      // 1e5 === 100000
       $scope.filterOptions = {
         priceMin: [0,1e6,2e6+5e5,5e6,7e6+5e5,1e7],
         priceMax: [2e6+5e5,5e6,7e6+5e5,1e7,1e7+5e6,5e7],
@@ -118,9 +119,6 @@ app.directive('buyFilter', [function(){
             // Stored values for sorting on frontend
             $scope.initValues = data;
 
-            // Send data to make pagination
-            // This is also done if a modal is opened
-            $scope.sort(data);
 
             // Checks if our id in URL is an existing id
             if(data.id){
@@ -135,6 +133,11 @@ app.directive('buyFilter', [function(){
             function findProp(prop){
               return prop._id === $route.current.params.id;
             }
+
+
+            // Send data to make pagination or to sort before if any option for sort is defined
+            // This is also done if a modal is opened
+            return ($scope.filterOption.sortOptionCode !== null) ? $scope.sort(data) : setupPagination(data);
         });
       }
 
