@@ -70,34 +70,31 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 	}
 
 	function addAbout(data){
-		aboutdb.create(
+		aboutdb.create([
 			{
 				title: "Olle Bengtsson",
 				description: "Kan lite av allt, Ger aldrig upp",
 				path: "img/about/1.jpg"
-			});
-		aboutdb.create(
+			},
 			{
 				title: "Andreas Lövqvist",
 				description: "Javascript mästare",
 				path: "img/about/1.jpg"
-			});
-		aboutdb.create(
+			},
 			{
 				title: "Alexander Wigström",
 				description: "Bootstrap maestro",
 				path: "img/about/1.jpg"
-			});
-		aboutdb.create(
+			},
 			{
 				title: "Marcus Wendel",
 				description: "Kan lite av allt, Snabblärd",
 				path: "img/about/1.jpg"
-			});
+			}]);
 	}
 
 	function addWorkers(data){
-		workers.create(
+		workers.create([
 			{
 			    name: "Kalle Kulla",
 			    description: "Trevlig kille med riktig kullmage",
@@ -106,8 +103,8 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 			    path: "img/workers/1.jpg",
 			    email: "kalle.kulla@dyhrrumson.se",
 			    phone: "071-234 56 78"
-	  		});
-	  	workers.create({
+	  		},
+	  		{
 			    name: "Lisa Bulla",
 			    description: "Trevlig tjej med riktig kullmage",
 			    worktime: 10,
@@ -115,8 +112,8 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 			    path: "img/workers/2.jpg",
 			    email: "lisa.bulla@dyhrrumson.se",
 			    phone: "071-234 56 78"
-	  		});
-	  	workers.create({
+	  		},
+	  		{
 			    name: "Hans Sulla",
 			    description: "Trevlig fillur med riktig kullmage",
 			    worktime: 8,
@@ -124,8 +121,8 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 			    path: "img/workers/3.jpg",
 			    email: "hans.sulla@dyhrrumson.se",
 			    phone: "071-234 56 78"
-	  		});
-	  	workers.create({
+	  		},
+	  		{
 			    name: "Pelle Hulla",
 			    description: "Trevlig snubbe med riktig kullmage",
 			    worktime: 6,
@@ -133,6 +130,6 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 			    path: "img/workers/4.jpg",
 			    email: "pelle.hulla@dyhrrumson.se",
 			    phone: "071-234 56 78"
-	  	});
+	  	}]);
 	}
 }]);
