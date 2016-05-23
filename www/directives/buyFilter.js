@@ -122,10 +122,16 @@ app.directive('buyFilter', [function(){
 
             // Checks if our id in URL is an existing id
             if($route.current.params.id){
+
+              // The function loops through our database to find matching id
               if($scope.initValues.find(findProp)){
+
+                // If true then open correct modal for that property
                 $scope.openModal($scope.initValues.find(findProp));
               }
               else{
+
+                // Else removes the falsy id from URL
                 $route.current.params.id = null;
               }
             }
@@ -134,10 +140,9 @@ app.directive('buyFilter', [function(){
               return prop._id === $route.current.params.id;
             }
 
-
             // Send data to make pagination or to sort before if any option for sort is defined
             // This is also done if a modal is opened
-            return ($scope.filterOption.sortOptionCode !== null) ? $scope.sort(data) : setupPagination(data);
+            ($scope.filterOption.sortOptionCode !== null) ? $scope.sort(data) : setupPagination(data);
         });
       }
 
