@@ -67,18 +67,18 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 			},
 			{
 				title: "Andreas Lövqvist",
-				description: "Javascript mästaren",
-				path: "img/about/2.jpg"
+				description: "Javascript mästare",
+				path: "img/about/1.jpg"
 			},
 			{
 				title: "Alexander Wigström",
-				description: "Design nörd",
-				path: "img/about/3.jpg"
+				description: "Bootstrap maestro",
+				path: "img/about/1.jpg"
 			},
 			{
 				title: "Marcus Wendel",
 				description: "Kan lite av allt, Snabblärd",
-				path: "img/about/4.jpg"
+				path: "img/about/1.jpg"
 			}]);
 	}
 
@@ -87,7 +87,7 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 			{
 			    name: "Kalle Kulla",
 			    description: "Trevlig kille med riktig kullmage",
-			    worktime: 8,
+			    worktime: 4,
 			    age: 20,
 			    path: "img/workers/1.jpg",
 			    email: "kalle.kulla@dyhrrumson.se",
@@ -105,7 +105,7 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 	  		{
 			    name: "Hans Sulla",
 			    description: "Trevlig fillur med riktig kullmage",
-			    worktime: 2,
+			    worktime: 8,
 			    age: 30,
 			    path: "img/workers/3.jpg",
 			    email: "hans.sulla@dyhrrumson.se",
@@ -114,7 +114,7 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 	  		{
 			    name: "Pelle Hulla",
 			    description: "Trevlig snubbe med riktig kullmage",
-			    worktime: 2,
+			    worktime: 6,
 			    age: 25,
 			    path: "img/workers/4.jpg",
 			    email: "pelle.hulla@dyhrrumson.se",
