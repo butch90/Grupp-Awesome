@@ -53,7 +53,7 @@ app.directive('carousel', [function() {
       }
 
       // handling resize
-      $(window).on('resize', resizer);
+      // $(window).on('resize', resizer);
 
       $scope.$on('$destroy', function() {
         $(window).off('resize', resizer);

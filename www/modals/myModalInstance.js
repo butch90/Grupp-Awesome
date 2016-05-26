@@ -1,9 +1,13 @@
-app.controller ('myModalInstance', [ '$scope', '$uibModalInstance', 'fastighet', function($scope, $uibModalInstance, fastighet){
+app.controller ('myModalInstance', [ '$scope', '$uibModalInstance', '$rootScope', 'fastighet', function($scope, $uibModalInstance, $rootScope, fastighet){
 
 
-	console.log(fastighet)
 
 	$scope.fastighet = fastighet;
+
+	$rootScope.floors = fastighet.floorplans;
+
+	$scope.gallery = fastighet.galleryImg;
+
 
 	$scope.ok = function () {
 		$uibModalInstance.close();
@@ -12,5 +16,4 @@ app.controller ('myModalInstance', [ '$scope', '$uibModalInstance', 'fastighet',
 	$scope.cancel = function () {
 		$uibModalInstance.dismiss();
 	};
-
 }]);

@@ -7,9 +7,9 @@
 			<div ng-if="values.length > 0">
 				<div ng-repeat="value in values">
 					<div class="listAll boxBg">
-						<div class="row">
+						<div class="row" ng-click="initModal(value)">
 							<div class="col-xs-12 col-sm-6">
-								<img class="img-responsive" ng-src="{{value.path}}" ng-click="initModal(value)">
+								<img class="img-responsive" ng-src="{{value.path}}">
 							</div>
 							<div class="col-xs-12 col-sm-6">
 								<p>

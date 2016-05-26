@@ -1,0 +1,49 @@
+<div class="modal-header">
+    <a class="close" data-dismiss="modal" ng-click="cancel()"><span class="glyphicon glyphicon-remove"></span></a>
+    <h3 class="modal-title">{{fastighet.adress}}</h3>
+</div>
+  <div class="property-modal-body">
+			<uib-tabset>
+				<uib-tab index="0" heading="{{tabs[0].title}}">
+	        <div class="row">
+	          <div class="col-xs-12 col-sm-6">
+        			<img class="img-responsive" ng-src="{{fastighet.path}}">
+    				</div>
+            <div class="col-xs-12 col-sm-6">
+              <p class="listP">
+                <b>Adress: {{fastighet.adress}}</b><br>
+                Postnummer: {{fastighet.zipcode}}<br>
+                Typ: {{fastighet.propertyType}}<br>
+                Antal rum: {{fastighet.rooms}}<br>
+                Bo area: {{fastighet.livingarea}} m²<br>
+                Tomtyta: {{fastighet.yardarea}} m²<br>
+                Antal våningar: {{fastighet.floors}}<br>
+                Objekts förklaring: {{fastighet.description}}
+                <p class="big">
+                <b>Pris: {{fastighet.price | currency}}</b>
+                </p>
+              </p>
+            </div>
+        	</div>
+				</uib-tab>
+
+				<uib-tab index="1" heading="{{tabs[2].title}}">
+					<div ng-repeat="picture in gallery">
+						<img class="floorplan-img" ng-src="{{picture}}">
+						<hr>
+					</div>
+				</uib-tab>
+
+				<uib-tab index="2" heading="{{tabs[1].title}}">
+					<div class="repeater" ng-repeat="floor in floors">
+							<button type="button" id="btn{{$index}}" class="btn btn-primary" ng-click="click($index)" aria-pressed="true">Plan {{$index + 1}}</button>
+					</div>
+					<img class="floorplan-img" ng-src="{{image}}"/>
+				</uib-tab>
+
+			</uib-tabset>
+    </div>
+   </div>
+
+
+
