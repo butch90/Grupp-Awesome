@@ -30,6 +30,19 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 				return ["Apartment", "House"][randomNum(0,1)];
 			}
 
+			var floors = [
+				[],
+				["img/floors/plan1.jpg", "img/floors/plan2.jpg", "img/floors/plan3.jpg"],
+			    [ "img/floors/plan2.jpg", "img/floors/plan3.jpg"],
+				["img/floors/plan5.jpg", "img/floors/plan7.jpg"],
+				["img/floors/plan1.jpg"],
+				["img/floors/plan5.jpg"],
+				["img/floors/plan3.jpg", "img/floors/plan1.jpg", "img/floors/plan2.jpg", "img/floors/plan7.jpg", "img/floors/plan5.jpg"]
+				];
+			var floorNumber = randomNum(1,6);		
+
+			var gallery = ["img/gallery/img1.jpg", "img/gallery/img2.jpg", "img/gallery/img3.jpg", "img/gallery/img4.jpg", "img/gallery/img5.jpg"];
+							
 			var adresses = ["Ramels väg", "Ernst", "Tessins väg", "Sergels väg", "Romlins väg", "Regementsgatan", "Nobelvägen", "Polvägen", "Limhamnsvägen"];
 			return {
 				adress: adresses[randomNum(0, 10)],
@@ -40,8 +53,10 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 				propertyType: randomType(),
 				description: "Hej",
 				yardarea: randomNum(1, 1000, 50),
-				floors: randomNum(1, 10),
-				path: "img/objects/villa" + randomNum(1,11) + ".jpg"
+				floors: floorNumber,
+				path: "img/objects/villa" + randomNum(1,11) + ".jpg",
+				floorplans: floors[floorNumber],
+				galleryImg: gallery
 			};
 		}
 
