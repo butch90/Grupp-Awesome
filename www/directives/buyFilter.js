@@ -22,7 +22,7 @@ app.directive('buyFilter', [function(){
 
       // This is where data is stored when an option is selected
       // Data is changed with ng-model in .html
-      // We use this data in the the query for filtering and URL
+      // We use this data in the query and URL
       $scope.filterOption = {
         priceMin: 1,
         priceMax: 1e8 ,
