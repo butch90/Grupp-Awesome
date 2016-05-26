@@ -8,8 +8,8 @@
 				<h4>Sortera</h4>
 				<select class="form-control"
 					ng-options="sortOption as sortOption.name for sortOption in filterOptions.sortOption"
-					ng-model="typeData"
-					ng-change="typeCheck()">
+					ng-model="sortOrder"
+					ng-change="typeCheck('sortOrder')">
 					<option value="" disabled selected>Sortera Pris/Boarea</option>
 				</select>
 			</div>
@@ -36,8 +36,8 @@
 					<h4>Fastighet</h4>
 					<select class="form-control"
 						ng-options="filterOption as filterOption.name for filterOption in filterOptions.type"
-						ng-model="typeData"
-						ng-change="typeCheck()">
+						ng-model="filterProperty"
+						ng-change="typeCheck('filterProperty')">
 						<option value="" disabled selected>Välj Fastighet</option>
 					</select>
 				</div>

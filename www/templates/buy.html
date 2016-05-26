@@ -15,7 +15,7 @@
 								<p>
 									Adress: {{value.adress}}<br>
 									Pris: {{value.price | currency}}<br>
-									Typ: {{value.propertyType}}<br>
+									Typ: {{value.propertyType == "Apartment" ? "Lägenhet" : "Villa"}}<br>
 									Antal rum: {{value.rooms}}<br>
 									Bo area: {{value.livingarea}} m²
 								</p>
