@@ -74,18 +74,20 @@ app.directive('buyFilter', [function(){
         areaMax: [25,50,75,100,125,150,200,300],
         itemsPerPage: [5,10,25,50],
 
-        type: [
+        filterProperty: [
           { propertyType: "House", name: "Villa" },
           { propertyType: "Apartment", name: "Lägenhet"}
         ],
 
-        sortOption: [
+        sortOrder: [
           { sortOptionCode: 0, sortOptionType: "price", name: "Pris: Lägsta först" },
           { sortOptionCode: -1, sortOptionType: "price", name: "Pris: Högsta först" },
           { sortOptionCode: 0, sortOptionType: "livingarea", name: "Boarea: Minsta först" },
           { sortOptionCode: -1, sortOptionType: "livingarea", name: "Boarea: Största först" }
         ]
       };
+
+      window.hey = $scope.filterOptions;
 
       // Filter
       $scope.filter = function(){
@@ -159,11 +161,35 @@ app.directive('buyFilter', [function(){
           if ($scope.filterOption.hasOwnProperty(key)) {
 
             // String should not be removed on propertyType, sortOptionType and id
-            if(key != 'propertyType' && key != "sortOptionType" && key != "id") {
+            if(key != "propertyType" && key != "sortOptionType" && key != "id") {
               $scope.filterOption[key] = $scope.filterOption[key]/1;
+            }
+
+            // For propertyType and sortOptionType we need to find the correct values and put them into their ng-model scope
+            // or the select element will stay undefined
+            if(key == "propertyType" || key == "sortOptionType"){
+              var type = (key == "propertyType") ? "filterProperty" : "sortOrder";
+
+              // Loop throught select options by index
+              for (var anotherKey in $scope.filterOptions[type]) {
+
+                // Finds correctly matching option
+                if($scope.filterOptions[type][anotherKey][key] == $route.current.params[key]){
+                  if(key == "sortOptionType"){
+                    if($scope.filterOptions[type][anotherKey].sortOptionCode == $scope.filterOption.sortOptionCode){
+                      $scope[type] = $scope.filterOptions[type][anotherKey];
+                    }
+                  }
+                  else{
+                    $scope[type] = $scope.filterOptions[type][anotherKey];
+                  }
+                }
+              }
             }
           }
         }
+
+        // 
 
         // If our RegExp is a string, make it a non string
         if($scope.filterOption.propertyType == "/.*/") {

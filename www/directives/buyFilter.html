@@ -7,7 +7,7 @@
 			<div class="col-xs-12 col-sm-8 pull-right form-group">
 				<h4>Sortera</h4>
 				<select class="form-control"
-					ng-options="sortOption as sortOption.name for sortOption in filterOptions.sortOption"
+					ng-options="sortOption as sortOption.name for sortOption in filterOptions.sortOrder"
 					ng-model="sortOrder"
 					ng-change="typeCheck('sortOrder')">
 					<option value="" disabled selected>Sortera Pris/Boarea</option>
@@ -35,7 +35,7 @@
 				<div class="form-group col-xs-10 col-xs-offset-1 text-left">
 					<h4>Fastighet</h4>
 					<select class="form-control"
-						ng-options="filterOption as filterOption.name for filterOption in filterOptions.type"
+						ng-options="filterOption as filterOption.name for filterOption in filterOptions.filterProperty"
 						ng-model="filterProperty"
 						ng-change="typeCheck('filterProperty')">
 						<option value="" disabled selected>Välj Fastighet</option>
