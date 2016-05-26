@@ -27,14 +27,14 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 
 			function randomType() {
 				var type = ["Apartment", "House"];
-				return type[randomNum(0,1)];
+				return ["Apartment", "House"][randomNum(0,1)];
 			}
 
 			var adresses = ["Ramels väg", "Ernst", "Tessins väg", "Sergels väg", "Romlins väg", "Regementsgatan", "Nobelvägen", "Polvägen", "Limhamnsvägen"];
 			return {
 				adress: adresses[randomNum(0, 10)],
 				zipcode: randomNum(1, 10000, 10000),
-				price: randomNum(1, 2e7, 7e5),
+				price: randomNum(1, 2e7, 3e5),
 				rooms: randomNum(1,10),
 				livingarea: randomNum(1, 100, 30),
 				propertyType: randomType(),

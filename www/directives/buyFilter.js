@@ -46,9 +46,8 @@ app.directive('buyFilter', [function(){
       };
 
       // Function to only get needed values into $scope.filterOption
-      $scope.typeData = {};
-      $scope.typeCheck = function(){
-        var data = $scope.typeData;
+      $scope.typeCheck = function(propName){
+        var data = $scope[propName];
 
         // If data is for sort
         if(data.sortOptionType){
@@ -62,7 +61,6 @@ app.directive('buyFilter', [function(){
           $scope.filterOption.propertyType = data.propertyType;
           $scope.filter();
         }
-        $scope.typeData = {};
       }
 
       // Select options for angular
@@ -106,11 +104,8 @@ app.directive('buyFilter', [function(){
             }]
           };
 
-        // This is our get request to our database
+        // This is our get request to our database from Mongresto
         property.get(
-
-          // Get takes 2 arguments here
-          // ( our query , a function which get the data )
           query,
           function(data){
 
@@ -123,17 +118,10 @@ app.directive('buyFilter', [function(){
             // Checks if our id in URL is an existing id
             if($route.current.params.id){
 
-              // The function loops through our database to find matching id
-              if($scope.initValues.find(findProp)){
-
+              // The function findProp loops through our database to find matching id
                 // If true then open correct modal for that property
-                $scope.openModal($scope.initValues.find(findProp));
-              }
-              else{
-
                 // Else removes the falsy id from URL
-                $route.current.params.id = null;
-              }
+              ($scope.initValues.find(findProp) ? $scope.openModal($scope.initValues.find(findProp)) : $route.current.params.id = null);
             }
 
             function findProp(prop){
@@ -170,7 +158,7 @@ app.directive('buyFilter', [function(){
         for (var key in $scope.filterOption) {
           if ($scope.filterOption.hasOwnProperty(key)) {
 
-            // propertyType should not parse "House" or "Apartment" && should not parse sortOptionType && should not parse id
+            // String should not be removed on propertyType, sortOptionType and id
             if(key != 'propertyType' && key != "sortOptionType" && key != "id") {
               $scope.filterOption[key] = $scope.filterOption[key]/1;
             }
