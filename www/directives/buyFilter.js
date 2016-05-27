@@ -171,17 +171,17 @@ app.directive('buyFilter', [function(){
               var type = (key == "propertyType") ? "filterProperty" : "sortOrder";
 
               // Loop throught select options by index
-              for (var anotherKey in $scope.filterOptions[type]) {
+              for (var index in $scope.filterOptions[type]) {
 
                 // Finds correctly matching option
-                if($scope.filterOptions[type][anotherKey][key] == $route.current.params[key]){
+                if($scope.filterOptions[type][index][key] == $route.current.params[key]){
                   if(key == "sortOptionType"){
-                    if($scope.filterOptions[type][anotherKey].sortOptionCode == $scope.filterOption.sortOptionCode){
-                      $scope[type] = $scope.filterOptions[type][anotherKey];
+                    if($scope.filterOptions[type][index].sortOptionCode == $scope.filterOption.sortOptionCode){
+                      $scope[type] = $scope.filterOptions[type][index];
                     }
                   }
                   else{
-                    $scope[type] = $scope.filterOptions[type][anotherKey];
+                    $scope[type] = $scope.filterOptions[type][index];
                   }
                 }
               }
