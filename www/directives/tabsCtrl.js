@@ -16,13 +16,12 @@ app.directive('tabsCtrl', [function (){
     isopen: false
   };
 
-  $scope.url = $scope.floors;
-  $scope.image = $scope.floors[0];
-  // angular.element('#btn0').button('toggle');
+  $scope.currentIndex = 0;
+  $scope.image = $scope.floors[$scope.currentIndex];
   $scope.click = function(floor) {
-
-    $scope.image = $scope.url[floor];
-    console.log('clicked');
+    
+    $scope.image = $scope.floors[floor];
+    $scope.currentIndex = floor;
   }
 
   // $scope.toggled = function(open) {

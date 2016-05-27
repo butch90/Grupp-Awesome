@@ -174,7 +174,7 @@ app.directive('buyFilter', [function(){
               for (var index in $scope.filterOptions[type]) {
 
                 // Finds correctly matching option
-                if($scope.filterOptions[type][index][key] == $route.current.params[key]){
+                if($scope.filterOptions[type][index][key] == $scope.filterOption[key]){
                   if(key == "sortOptionType"){
                     if($scope.filterOptions[type][index].sortOptionCode == $scope.filterOption.sortOptionCode){
                       $scope[type] = $scope.filterOptions[type][index];

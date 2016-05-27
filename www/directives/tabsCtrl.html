@@ -34,7 +34,8 @@
 
 				<uib-tab index="2" heading="{{tabs[1].title}}">
 					<div class="repeater" ng-repeat="floor in floors">
-							<button type="button" id="btn{{$index}}" class="btn btn-primary" ng-click="click($index)" aria-pressed="true">Plan {{$index + 1}}</button>
+							<button type="button" id="btn{{$index}}" class="btn btn-primary" ng-class="$index == currentIndex ? 'active' : ''" ng-click="click($index)">Plan {{$index + 1}}</button>
+
 					</div>
 					<img class="floorplan-img" ng-src="{{image}}"/>
 				</uib-tab>
