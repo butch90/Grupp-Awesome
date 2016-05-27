@@ -12,7 +12,7 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
     loadhome();
 
     // Dummy data
-    property.get({},function(data){if(!data.length){addProperties();}});
+    property.get({},function(data){if(!data.length){addProperties();addProperties();addProperties();addProperties();}});
     homedb.get({},function(data){if(!data.length){addHome();}});
     aboutdb.get({},function(data){if(!data.length){addAbout()}});
     workers.get({},function(data){if(!data.length){addWorkers()}});
@@ -51,7 +51,7 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 				rooms: randomNum(1,10),
 				livingarea: randomNum(1, 100, 30),
 				propertyType: randomType(),
-				description: "Hej",
+				description: "Lorem ipsum dolor sit amet, qui postulant gloriatur ut,est ex dicat rationibus intellegam, has enim option voluptua id. Te mucius voluptatum pro, consul possit corrumpit id qui. Ius eloquentiam mediocritatem ex, placerat vivendum ut eum, te mei consul putent moderatius. Scaevola recteque splendide cum ei, ei qui fugit eleifend referrentur. Te summo denique corrumpit ius, usu unum facilisi in.",
 				yardarea: randomNum(1, 1000, 50),
 				floors: floorNumber,
 				path: "img/objects/villa" + randomNum(1,11) + ".jpg",
@@ -61,7 +61,7 @@ app.controller("home", ["$scope", "property", "homedb", "aboutdb", "workers", fu
 		}
 
 		var homes = [];
-		for (var i = 0; i < 164; i++) {
+		for (var i = 0; i < 25; i++) {
 			homes.push(randomData());
 
 		}
