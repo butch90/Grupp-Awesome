@@ -18,7 +18,7 @@ app.directive('tabsCtrl', [function (){
 
   $scope.url = $scope.floors;
   $scope.image = $scope.floors[0];
-  angular.element('#btn0').button('toggle');
+  // angular.element('#btn0').button('toggle');
   $scope.click = function(floor) {
 
     $scope.image = $scope.url[floor];

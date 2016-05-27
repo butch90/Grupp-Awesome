@@ -1,0 +1,8 @@
+<uib-carousel active="active" no-wrap="noWrapSlides">
+  <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+    <img ng-src="{{gallery[$index]}}">
+    <div class="carousel-caption">
+
+    </div>
+  </uib-slide>
+</uib-carousel>
